@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Udo Nieuwmeijer — IT Student Portfolio</title>
-<meta name="description" content="Portfolio of Udo Nieuwmeijer, an IT student specializing in networking and software support." />
+<meta name="description" content="Portfolio of Udo Nieuwmeijer, an IT graduate specializing in software development." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +29,7 @@
       </ul>
     </nav>
 
-    <a href="#contact" class="btn btn-primary nav-cta">Hire me</a>
+    <a href="#contact" class="btn btn-primary nav-cta">Get in touch</a>
 
     <button id="menuBtn" class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobileNav">
       <span class="sr-only">Toggle menu</span>
@@ -55,7 +55,7 @@
     <div class="container hero-grid">
 
       <div class="hero-copy reveal">
-        <p class="eyebrow">IT Student · Aspiring Systems &amp; Support Engineer</p>
+        <p class="eyebrow">IT graduate· Aspiring Software developer</p>
         <h1>Hi, I'm Udo.<br>I'm an IT graduate passionate about building.</h1>
         <p class="hero-text">
           I’m an IT graduate with a foundation in software development, web technologies and databases. I enjoy learning new technologies, and continuously expanding my skills in software development. I’m currently looking to turn my technical knowledge into real-world experience and grow within the IT industry.
@@ -124,10 +124,10 @@
         </p>
       </div>
 
-      <div class="filter-row reveal" role="group" aria-label="Filter projects by category">
+      <!-- <div class="filter-row reveal" role="group" aria-label="Filter projects by category">
         <button type="button" class="filter-btn is-active" data-filter="all">All</button>
         <button type="button" class="filter-btn" data-filter="software">Software</button>
-      </div>
+      </div> -->
 
       <div id="projectGrid" class="project-grid" aria-live="polite"></div>
       <p id="noResults" class="no-results hidden">No projects in this category yet.</p>
@@ -151,7 +151,7 @@
             <h3>Higher Certificate in Information Technology</h3>
             <p class="edu-org">Eduvos - Menlyn</p>
             <p class="edu-desc">
-              Coursework in software development, web development, databases, and IT problem-solving. Tutored a other students.
+              Coursework in software development, web development, databases, and IT problem-solving. Tutored other students.
             </p>
             <ul class="tag-list">
               <li>IT Fundamentals</li>
@@ -169,7 +169,7 @@
           <div>
             <p class="edu-meta">In progress</p>
             <h3>Python Certification</h3>
-            <p class="edu-org">freecodecamp</p>
+            <p class="edu-org">freeCodeCamp</p>
             <p class="edu-desc">
               Covers the fundamentals of Python and applies the core concepts and features of the language through practical projects.
             </p>
@@ -200,7 +200,7 @@
         <p class="eyebrow">Contact</p>
         <h2>Let's talk</h2>
         <p class="section-lead">
-          Looking for an IT support, networking, or junior developer internship?
+          Looking for a junior software development role or junior developer internship?
           I'd love to hear from you. I usually reply within a day or two.
         </p>
 
@@ -320,21 +320,23 @@
       category: "software",
       tag: "Software",
       summary: "A personal portfolio website built with my current knowledge to showcase my projects, skills, and development journey while continuing to improve my web development abilities.",
-      stack: ["HTML", "CSS", "JavaScript"]
+      stack: ["HTML", "CSS", "JavaScript"] 
     },
     {
       title: "Java RPG game",
       category: "software",
       tag: "Software",
       summary: "A Java-based console RPG developed as part of my IT studies. The project uses object-oriented programming, inheritance, mathematical logic, randomization, and file handling to create a combat system where players exploit enemies' mathematical weaknesses.",
-      stack: ["Java"]
+      stack: ["Java"],
+      repo: "https://github.com/UdoNieuw/JavaProject_2025"
     },
     {
       title: "Recipe Management Web Application",
       category: "software",
       tag: "Software",
       summary: "A C# web application developed as part of my advanced C# studies. Users can create and manage recipes, register and log into their accounts, and use a password recovery feature. The project gave me practical experience with ASP.NET, databases, authentication, and web application development.",
-      stack: ["C#", "ASP.NET"]
+      stack: ["C#", "ASP.NET"],
+      repo: "https://github.com/UdoNieuw/C-Advanced-Project-2025"
     }
     
   ];
@@ -351,11 +353,16 @@
       return '<li>' + s + '</li>';
     }).join("");
 
+    var linkHtml = p.repo
+      ? '<a class="project-link" href="' + p.repo + '" target="_blank" rel="noopener noreferrer">View on GitHub →</a>'
+      : '';
+
     article.innerHTML =
       '<span class="project-tag project-tag-' + p.category + '">' + p.tag + '</span>' +
       '<h3>' + p.title + '</h3>' +
       '<p>' + p.summary + '</p>' +
-      '<ul class="stack-list">' + stackHtml + '</ul>';
+      '<ul class="stack-list">' + stackHtml + '</ul>' +
+      linkHtml;
 
     return article;
   }

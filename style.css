@@ -11,7 +11,7 @@
   --text: #f8f2ef;
   --muted: #9fa0a1;
   --primary: #e33623;
-  --primary-dark: #e33623;
+  --primary-dark: #b92a1a;
   --accent: #b84d14;
   --danger: #DC4C4C;
   --success: #1E9E6C;
@@ -500,12 +500,23 @@ textarea:focus-visible {
   color: var(--primary);
 }
 .project-tag-software {
-  background-color: rgba(20, 184, 166, 0.12);
-  color: #0F8F81;
+  background-color: rgba(227, 54, 35, 0.12);
+  color: var(--primary);
 }
 .project-tag-security {
   background-color: rgba(220, 76, 76, 0.1);
   color: var(--danger);
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+.project-link:hover,
+.project-link:focus-visible {
+  text-decoration: underline;
 }
 
 .stack-list {
@@ -766,8 +777,9 @@ textarea:focus-visible {
   }
 
   .hero-stats {
-    grid-template-columns: repeat(3, auto);
-    gap: 20px;
+    display: grid;
+    grid-template-columns: auto;
+    gap: 32px;
   }
 
   .project-grid {
